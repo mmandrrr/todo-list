@@ -55,6 +55,8 @@
     &_item {
         text-transform: uppercase;
         font-weight: bold;
+        width: 9.375rem;
+        text-align: center;
     }
 
     &_main {
@@ -80,25 +82,88 @@
             overflow: hidden;
             text-overflow: ellipsis;
             text-align: center;
+        }
+    }
+}
 
-            .checked {
-                background: url(../assets/check-mark.svg) center / auto 100% no-repeat;
-                background-color: #fff;
+.checkbox {
+    display: block;
+    width: .9375rem;
+    height: .9375rem;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 10%;
+    margin: 0 auto;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.checked {
+    background: url(../assets/check-mark.svg) center / auto 100% no-repeat;
+    background-color: #fff;
+}
+
+.modal {
+    width: 40%;
+    background-color: #fff;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .9375rem;
+    
+    &_wrapper {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba($color: #767676, $alpha: 0.5);
+    }
+
+    &_title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &_description {
+        p {
+            word-wrap: break-word;
+        }
+
+        h3 {
+            font-weight: bold;
+            margin-bottom: .9375rem;
+        }
+    }
+
+    &_status {
+        display: flex;
+        gap: 1.25rem;
+    
+        span {
+            margin: 0;
+
+            &:hover {
+                cursor: auto;
             }
+        }
+    }
 
-            span {
-                display: block;
-                width: .9375rem;
-                height: .9375rem;
-                background-color: #fff;
-                border: 1px solid black;
-                border-radius: 10%;
-                margin: 0 auto;
+    &_close {
+        width: 20%;
+        padding: .625rem;
+        background-color: #efefef;
+        border-radius: .625rem;
+        text-align: center;
 
-                &:hover {
-                    cursor: pointer;
-                }
-            }
+        &:hover {
+            cursor: pointer;
         }
     }
 }
@@ -111,6 +176,10 @@
     position: absolute;
     top: 100%;
     margin-top: .3125rem;
+}
+
+.show {
+    display: block;
 }
 
 .hide {

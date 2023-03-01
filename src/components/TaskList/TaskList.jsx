@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react"
-import Task from "./Task/Task"
+import { useEffect, useState } from "react";
+
+import Task from "./Task/Task";
+import Heading from './Heading/Heading';
 
 const TaskList = ({
     taskArr
@@ -27,12 +29,7 @@ const TaskList = ({
 
     return(
         <div className="tasklist">
-            <ul className="tasklist_heading">
-                <li className="tasklist_item">id</li>
-                <li className="tasklist_item">title</li>
-                <li className="tasklist_item">description</li>
-                <li className="tasklist_item">status</li>
-            </ul>
+            <Heading />
             <div className="tasklist_main">
                 {taskList}
             </div>
