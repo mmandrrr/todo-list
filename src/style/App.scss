@@ -1,0 +1,118 @@
+@import './reset.css';
+
+*{
+    box-sizing: border-box;
+}
+
+.App {
+    min-height: 100vh;
+    background-color: #d3d3d3;
+    padding-bottom: 3.125rem;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+.form {
+    padding-top: 3.125rem;
+    display: flex;
+    gap: 3.125rem;
+    align-items: end;
+    margin-bottom: 6.25rem;
+
+    &_title, &_description {
+        display: flex;
+        flex-direction: column;
+        gap: .625rem;
+        position: relative;
+    }
+
+    &_input {
+        width: 18.75rem;
+        border: 1px solid black;
+    }
+
+    &_input-red {
+        border: 1px solid red;
+    }
+}
+
+.tasklist {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    &_heading {
+        padding: .625rem 0;
+        display: flex;
+        max-width: 60%;
+        justify-content: space-around;
+        background-color: #cecece;
+    }
+
+    &_item {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    &_main {
+        display: flex;
+        flex-direction: column;
+        gap: .625rem;
+    }
+
+    &_task {
+        padding: .625rem 0;
+        display: flex;
+        max-width: 60%;
+        justify-content: space-around;
+        background-color: #a5a5a5;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        div {
+            width: 12.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+
+            .checked {
+                background: url(../assets/check-mark.svg) center / auto 100% no-repeat;
+                background-color: #fff;
+            }
+
+            span {
+                display: block;
+                width: .9375rem;
+                height: .9375rem;
+                background-color: #fff;
+                border: 1px solid black;
+                border-radius: 10%;
+                margin: 0 auto;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+.error {
+    display: block;
+    color: red;
+    font-size: .625rem;
+    position: absolute;
+    top: 100%;
+    margin-top: .3125rem;
+}
+
+.hide {
+    display: none;
+}

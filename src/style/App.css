@@ -1,0 +1,143 @@
+@import url(d:\IT\todoList-test\no-ts\src\style\reset.css);
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+  background-color: #d3d3d3;
+  padding-bottom: 3.125rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.form {
+  padding-top: 3.125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3.125rem;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  margin-bottom: 6.25rem;
+}
+
+.form_title, .form_description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: .625rem;
+  position: relative;
+}
+
+.form_input {
+  width: 18.75rem;
+  border: 1px solid black;
+}
+
+.form_input-red {
+  border: 1px solid red;
+}
+
+.tasklist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.25rem;
+}
+
+.tasklist_heading {
+  padding: .625rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 60%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #cecece;
+}
+
+.tasklist_item {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.tasklist_main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: .625rem;
+}
+
+.tasklist_task {
+  padding: .625rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 60%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #a5a5a5;
+}
+
+.tasklist_task:hover {
+  cursor: pointer;
+}
+
+.tasklist_task div {
+  width: 12.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.tasklist_task div .checked {
+  background: url(../assets/check-mark.svg) center/auto 100% no-repeat;
+  background-color: #fff;
+}
+
+.tasklist_task div span {
+  display: block;
+  width: .9375rem;
+  height: .9375rem;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 10%;
+  margin: 0 auto;
+}
+
+.tasklist_task div span:hover {
+  cursor: pointer;
+}
+
+.error {
+  display: block;
+  color: red;
+  font-size: .625rem;
+  position: absolute;
+  top: 100%;
+  margin-top: .3125rem;
+}
+
+.hide {
+  display: none;
+}
+/*# sourceMappingURL=App.css.map */
