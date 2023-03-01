@@ -1,20 +1,21 @@
+import { useDispatch } from "react-redux";
 
+import { setTitle, setDescription } from "../../appSlice/appSlice";
 
 const Form = ({
     title,
     description,
-    setTitle,
-    setDescription,
     submitForm,
     titleEmpty,
-    setTitleEmpty,
     descriptionEmpty,
+    setTitleEmpty,
     setDescriptionEmpty
 }) => {
+    const dispatch = useDispatch()
 
     const validateInput = (e,setEmpty, setInput) => {
-        setEmpty(false);
-        setInput(e.target.value)
+        dispatch(setEmpty(false));
+        dispatch(setInput(e.target.value));
     }
 
     return(
@@ -43,7 +44,6 @@ const Form = ({
                     name="description_input" 
                     type="text" 
                     className={descriptionEmpty ? 'form_input form_input-red' : 'form_input'} 
-                    // style={descriptionEmpty ? {border: '1px solid red'} : {border: '1px solid black'}}
                     placeholder="Enter Description"/>
             </div>
             <input

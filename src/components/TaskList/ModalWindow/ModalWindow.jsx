@@ -1,5 +1,3 @@
-
-
 const ModalWindow = ({
     title,
     description,

@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import ModalWindow from "../ModalWindow/ModalWindow";
+
+import { setModalStatus } from "../TaskSlice/TaskSlice";
 
 const Task = ({
     id,
@@ -8,9 +11,10 @@ const Task = ({
     description,
     status
 }) => {
+    const dispatch = useDispatch();
 
-    const [taskStatus, setTaskStatus] = useState(status);
-    const [modalStatus, setModalStatus] = useState('modal_wrapper hide')
+    const {modalStatus} = useSelector(state => state.task),
+          [taskStatus, setTaskStatus] = useState(status);
 
     const toggleStatus = (e) => {
         e.stopPropagation()
@@ -18,11 +22,11 @@ const Task = ({
     }
 
     const openModal = () => {
-        setModalStatus('modal_wrapper')
+        dispatch(setModalStatus('modal_wrapper'));
     }
 
     const hideModal = () => {
-        setModalStatus('modal_wrapper hide')
+        dispatch(setModalStatus('modal_wrapper hide'));
     }
 
     return(

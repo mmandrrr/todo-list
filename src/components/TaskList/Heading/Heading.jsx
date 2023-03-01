@@ -1,5 +1,3 @@
-
-
 const Heading = () => {
     return(
         <ul className="tasklist_heading">
