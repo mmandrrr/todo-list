@@ -1,10 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import { setTitle, setDescription } from "../../appSlice/appSlice";
-
 const Form = ({
-    title,
-    description,
     submitForm,
     titleEmpty,
     descriptionEmpty,
@@ -13,21 +9,19 @@ const Form = ({
 }) => {
     const dispatch = useDispatch()
 
-    const validateInput = (e,setEmpty, setInput) => {
+    const validateInput = (setEmpty) => {
         dispatch(setEmpty(false));
-        dispatch(setInput(e.target.value));
     }
 
     return(
-        <form onSubmit={(e) => submitForm(e, title, description)} className="form">
+        <form onSubmit={(e) => submitForm(e)} className="form">
             <div className="form_title">
                 <label htmlFor="title_input">Title:</label>
                 <div 
                     className={titleEmpty ? "error" : 'hide'}
                 >The Field is Empty</div>
                 <input 
-                    onChange={(e) => validateInput(e,setTitleEmpty,setTitle)}
-                    value={title}
+                    onChange={() => validateInput(setTitleEmpty)}
                     name="title_input" 
                     type="text" 
                     className={titleEmpty ? 'form_input form_input-red' : 'form_input'} 
@@ -39,8 +33,7 @@ const Form = ({
                     className={descriptionEmpty ? "error" : 'hide'}
                 >The Field is Empty</div>
                 <input 
-                    onChange={(e) => validateInput(e,setDescriptionEmpty,setDescription)}
-                    value={description}
+                    onChange={(e) => validateInput(setDescriptionEmpty)}
                     name="description_input" 
                     type="text" 
                     className={descriptionEmpty ? 'form_input form_input-red' : 'form_input'} 

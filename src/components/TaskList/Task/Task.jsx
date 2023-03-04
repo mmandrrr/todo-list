@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 
 import ModalWindow from "../ModalWindow/ModalWindow";
 
@@ -52,4 +52,4 @@ const Task = ({
     )
 }
 
-export default Task
+export default memo(Task);

@@ -13,15 +13,16 @@ function App() {
 
   const dispatch = useDispatch();
 
-  const {title} = useSelector(state => state.app),
-        {description} = useSelector(state => state.app),
-        {titleEmpty} = useSelector(state => state.app),
+  const {titleEmpty} = useSelector(state => state.app),
         {descriptionEmpty} = useSelector(state => state.app);
 
   const [taskArr, setTaskArr] = useState([]);
 
-  const submitForm = (e, title, description) => {
+  const submitForm = (e) => {
     e.preventDefault();
+    const data = new FormData(e.target);
+    const title = data.get('title_input');
+    const description = data.get('description_input');
 
     if(!title) {
       dispatch(setTitleEmpty(true));
@@ -37,8 +38,6 @@ function App() {
     <div className="App">
       <div className="container">
         <Form 
-          title={title}
-          description={description}
           submitForm={submitForm}
           titleEmpty={titleEmpty}
           descriptionEmpty={descriptionEmpty}
