@@ -7,7 +7,7 @@ const TaskList = ({
     taskArr
 }) => {
 
-    const [taskList, setTaskList] = useState([])
+    const [taskList, setTaskList] = useState([]);
 
     useEffect(()=> {
         if(taskArr.length > 0) {

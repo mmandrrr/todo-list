@@ -145,7 +145,7 @@
 }
 
 .modal_wrapper {
-  position: absolute;
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
